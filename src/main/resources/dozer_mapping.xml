@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+      http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<configuration>
+		<custom-converters>
+			<converter type="com.prowings.weather.utills.TempratureConverter">
+				<class-a>java.lang.Double</class-a>
+				<class-b>java.lang.Double</class-b>
+			</converter>
+			<converter type="com.prowings.weather.utills.EpochToDateConverter">
+				<class-a>java.lang.Integer</class-a>
+				<class-b>java.lang.String</class-b>
+			</converter>
+		</custom-converters>
+	</configuration>
+
+	<mapping>
+		<class-a>com.prowings.weather.model.WeatherData</class-a>
+		<class-b>com.prowings.weather.responsedto.model.WeatherDataDto
+		</class-b>
+		<field>
+			<a>coord</a>
+			<b>coordinates</b>
+		</field>
+	</mapping>
+	<mapping>
+		<class-a>com.prowings.weather.model.Coord</class-a>
+		<class-b>com.prowings.weather.responsedto.model.Coordinates
+		</class-b>
+		<field>
+			<a>lon</a>
+			<b>longitude</b>
+		</field>
+		<field>
+			<a>lat</a>
+			<b>lattitude</b>
+		</field>
+	</mapping>
+	<mapping>
+		<class-a>com.prowings.weather.model.Main</class-a>
+		<class-b>com.prowings.weather.responsedto.model.Main
+		</class-b>
+		<field>
+			<a>temp</a>
+			<b>tempruture</b>
+		</field>
+	</mapping>
+</mappings>
